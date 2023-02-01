@@ -1,0 +1,15 @@
+.note-heading {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 0.25rem 0.5rem;
+}
+.note-body {
+    outline: none;
+    border: none;
+    height: 65px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 0.5rem 0.5rem;
+}
