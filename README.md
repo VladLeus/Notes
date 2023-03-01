@@ -1,1 +1,1 @@
-Check demo: https://vladleus.github.io/Notes/
+Check demo: https://vladleus.github.io/Note/
