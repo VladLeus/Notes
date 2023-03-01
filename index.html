@@ -21,23 +21,33 @@
     <main class="lg:max-w-3xl lg:mx-auto xl:max-w-5xl xl:mx-auto pt-5">
         <div class="container grid grid-cols-1 mx-auto">
             <label for="heading" class="text-xl font-bold dark:text-textColor">Your Heading</label>
-            <input id="heading" type="text" maxlength="15" class="note-heading bg-secondColor dark:bg-thirdDarkColor dark:text-textColor hover:bg-firstColor dark:hover:bg-firstDarkColor" :value="headingValue" v-on:input="headingChangeHandler">
+            <input id="heading" type="text" maxlength="15"
+                   class="note-heading bg-secondColor dark:bg-thirdDarkColor dark:text-textColor hover:bg-firstColor dark:hover:bg-firstDarkColor"
+                   :value="headingValue" v-on:input="headingChangeHandler">
             <label for="note" class="text-xl font-bold dark:text-textColor">Your note</label>
-            <textarea  id="note" class="note-body bg-secondColor dark:bg-thirdDarkColor dark:text-textColor hover:bg-firstColor dark:hover:bg-firstDarkColor" maxlength="150" :value="noteValue" v-on:input="noteChangeHandler"></textarea>
-            <span class="bg-secondColor py-2 px-4 rounded-full hover:bg-firstColor w-max mt-5 cursor-pointer font-bold dark:bg-thirdDarkColor dark:hover:bg-firstDarkColor dark:text-textColor" @click="addNote">Add Note</span>
-            <h3 v-show="isFilled" class="font-bold text-center text-sm pt-2 text-pink-600 dark:text-pink-400">Your can't add an empty note, please write your heading and note first!</h3>
-            <h2 v-show="notes.length !== 0" class="italic text-center text-sm pt-2 dark:text-textColor">Press on heading to show the delete button</h2>
+            <textarea id="note"
+                      class="note-body bg-secondColor dark:bg-thirdDarkColor dark:text-textColor hover:bg-firstColor dark:hover:bg-firstDarkColor"
+                      maxlength="150" :value="noteValue" v-on:input="noteChangeHandler"></textarea>
+            <span class="bg-secondColor py-2 px-4 rounded-full hover:bg-firstColor w-max mt-5 cursor-pointer font-bold dark:bg-thirdDarkColor dark:hover:bg-firstDarkColor dark:text-textColor"
+                  @click="addNote">Add Note</span>
+            <h3 v-show="isFilled" class="font-bold text-center text-sm pt-2 text-pink-600 dark:text-pink-400">Your can't
+                add an empty note, please write your heading and note first!</h3>
+            <h2 v-show="notes.length !== 0" class="italic text-center text-sm pt-2 dark:text-textColor">Press on heading
+                to show the delete button</h2>
             <ul class="note grid grid-cols-3 container">
-                <li v-if="notes.length !== 0" class="notes-item text-center mt-5 mx-2" v-for="(note, index) in notes" @click="showDeleteBtn(index)">
-                        <h3 class="final-heading font-bold text-xl bg-firstColor dark:bg-firstDarkColor dark:text-textColor px-2">
-                            {{note[0]}} <i class="uil uil-trash-alt cursor-pointer pl-2 hidden dark:text-textColor" :id = "index" @click="deleteNote(index)"></i>
-                        </h3>
-                        <p class="final-note text-xl bg-secondColor dark:bg-thirdDarkColor dark:text-textColor h-max px-2">
-                            {{note[1]}}
-                        </p>
+                <li v-if="notes.length !== 0" class="notes-item text-center mt-5 mx-2" v-for="(note, index) in notes"
+                    @click="showDeleteBtn(index)">
+                    <h3 class="final-heading font-bold text-xl bg-firstColor dark:bg-firstDarkColor dark:text-textColor px-2">
+                        {{note[0]}} <i class="uil uil-trash-alt cursor-pointer pl-2 hidden dark:text-textColor"
+                                       :id="index" @click="deleteNote(index)"></i>
+                    </h3>
+                    <p class="final-note text-xl bg-secondColor dark:bg-thirdDarkColor dark:text-textColor h-max px-2">
+                        {{note[1]}}
+                    </p>
                 </li>
             </ul>
-            <h2 v-show="notes.length === 0" class="font-bold text-2xl pt-2 dark:text-textColor">No current notes yet</h2>
+            <h2 v-show="notes.length === 0" class="font-bold text-2xl pt-2 dark:text-textColor">No current notes
+                yet</h2>
         </div>
     </main>
 </div>
